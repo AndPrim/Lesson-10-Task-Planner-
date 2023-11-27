@@ -111,6 +111,31 @@ class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test // Здесь и далее тестами проверил поиск по всем видам имеющихся задач.
+    public void sortingThroughTheTasksTitleAndTopic() {
+        SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
+
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        Epic epic = new Epic(55, subtasks);
+
+        Meeting meeting = new Meeting(
+                556,
+                "Позвонить родителям",
+                "Покупка стройматериалов на дачу",
+                "Во вторник после обеда"
+        );
+
+        Todos todos = new Todos();
+
+        todos.add(simpleTask);
+        todos.add(epic);
+        todos.add(meeting);
+
+        Task[] expected = {simpleTask, meeting};
+        Task[] actual = todos.search("Позвонить родителям");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
     @Test //Задача одна. Запрос не подходит.
     public void sortingThroughTheOneTasksNow() {
 
