@@ -72,7 +72,7 @@ class TodosTest {
     }
 
     @Test //Задача одна. Запрос подходит. Товаров много.
-    public void sortingThroughTheOneTasksMach() {
+    public void sortingThroughTheTasksMach() {
 
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         String[] subtasks1 = {"Мёд", "Рис", "Халва"};
@@ -88,6 +88,26 @@ class TodosTest {
 
         Task[] expected = {epic1};
         Task[] actual = todos.search("Рис");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test //Задача одна. Запрос подходит. Товаров много.
+    public void sortingThroughTheTasksMachZero() {
+
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        String[] subtasks1 = {"Мёд", "Рис", "Халва"};
+        Epic epic = new Epic(55, subtasks);
+        Epic epic1 = new Epic(56, subtasks1);
+
+
+        Todos todos = new Todos();
+
+
+        todos.add(epic);
+        todos.add(epic1);
+
+        Task[] expected = {};
+        Task[] actual = todos.search("Лук");
         Assertions.assertArrayEquals(expected, actual);
     }
 
