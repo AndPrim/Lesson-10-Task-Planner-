@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class TaskTest {
 
     @Test
-    public void simpleTaskTitleNo(){
+    public void simpleTaskTitleNo() {
         SimpleTask simpleTask = new SimpleTask(5, "Увидеть рассвет");
         //simpleTask.matches("Увидеть закат");
 
@@ -19,7 +19,7 @@ class TaskTest {
     }
 
     @Test
-    public void simpleTaskTitleYes(){
+    public void simpleTaskTitleYes() {
         SimpleTask simpleTask = new SimpleTask(5, "Увидеть рассвет");
 
 
@@ -32,7 +32,7 @@ class TaskTest {
 
     @Test
     public void epicSubtasksNo() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(5, subtasks);
 
         boolean expected = false;
@@ -41,7 +41,7 @@ class TaskTest {
 
     @Test
     public void epicSubtasksYesOne() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(5, subtasks);
 
         boolean expected = true;
@@ -50,7 +50,7 @@ class TaskTest {
 
     @Test
     public void epicSubtasksYesTwo() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(5, subtasks);
 
         boolean expected = true;
@@ -59,7 +59,7 @@ class TaskTest {
 
     @Test
     public void epicSubtasksYesThree() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(5, subtasks);
 
         boolean expected = true;
@@ -67,7 +67,7 @@ class TaskTest {
     }
 
     @Test
-    public void meetingNowObjects(){
+    public void meetingNowObjects() {
         Meeting meeting = new Meeting(
                 5,
                 "Выкатка 3й версии приложения",
@@ -80,7 +80,7 @@ class TaskTest {
     }
 
     @Test
-    public void meetingTopicObjectYes(){
+    public void meetingTopicObjectYes() {
         Meeting meeting = new Meeting(
                 5,
                 "Выкатка 3й версии приложения",
@@ -93,7 +93,7 @@ class TaskTest {
     }
 
     @Test
-    public void meetingProjectObjectYes(){
+    public void meetingProjectObjectYes() {
         Meeting meeting = new Meeting(
                 5,
                 "Выкатка 3й версии приложения",
@@ -106,7 +106,7 @@ class TaskTest {
     }
 
     @Test
-    public void meetingStartObjectYes(){
+    public void meetingStartObjectYes() {
         Meeting meeting = new Meeting(
                 5,
                 "Выкатка 3й версии приложения",

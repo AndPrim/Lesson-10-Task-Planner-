@@ -1,4 +1,4 @@
-public class Meeting extends Task{
+public class Meeting extends Task {
 
 
     protected String topic;
@@ -23,7 +23,6 @@ public class Meeting extends Task{
         this.project = project;
         this.start = start;
     }
-
 
 
     @Override
