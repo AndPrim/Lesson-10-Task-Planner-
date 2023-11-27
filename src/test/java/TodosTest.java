@@ -29,7 +29,7 @@ class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    @Test
+    @Test //Задача не подходит.
     public void sortingThroughTheTasksZero() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
@@ -54,7 +54,24 @@ class TodosTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    @Test
+    @Test //Задача одна.
+    public void sortingThroughTheOneTasks() {
+
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        Epic epic = new Epic(55, subtasks);
+
+
+        Todos todos = new Todos();
+
+
+        todos.add(epic);
+
+        Task[] expected = {epic};
+        Task[] actual = todos.search("Яйца");
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test // Здесь и далее тестами проверил поиск по всем видам имеющихся задач.
     public void sortingThroughTheTasksTitle() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
